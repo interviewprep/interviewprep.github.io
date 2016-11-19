@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <title> Programming Interview Prep</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/revolution-slider.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="css/responsive.css" rel="stylesheet">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+     <style>
+         .current
+         {
+             background:#25AAE1;
+               color:#fff !important;
+         }
+     .main-menu .navigation > li > a:active
+     {
+         background:blue;
+       
+     }
+     .contact h1
+     {
+         color:#666;
+     }
+     .contact label
+     {
+         color:#666;
+     }
+     .contact label span
+     {
+         color:Red;
+     }
+     .form-control
+     {
+          background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 4px;
+    box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.075) inset;
+     }
+     
+     </style>
+     <script>
+
+         $(document).ready(function () {
+             $(document).on("scroll", onScroll);
+
+             //smoothscroll
+             $('a[href^="#"]').on('click', function (e) {
+                 e.preventDefault();
+                 $(document).off("scroll");
+
+                 $('a').each(function () {
+                     $(this).removeClass('current');
+                 })
+                 $(this).addClass('current');
+
+                 var target = this.hash,
+            menu = target;
+                 $target = $(target);
+                 $('html, body').stop().animate({
+                     'scrollTop': $target.offset().top + 2
+                 }, 500, 'swing', function () {
+                     window.location.hash = target;
+                     $(document).on("scroll", onScroll);
+                 });
+             });
+         });
+
+         function onScroll(event) {
+             var scrollPos = $(document).scrollTop();
+             $('#menu-center a').each(function () {
+                 var currLink = $(this);
+                 var refElement = $(currLink.attr("href"));
+                 if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                     $('#menu-center ul li a').removeClass("current");
+                     currLink.addClass("current");
+                 }
+                 else {
+                     currLink.removeClass("current");
+                 }
+             });
+         }
+
+         $(document).ready(function () {
+             $(".la1").click(function () {
+
+                 $('html,body').animate({
+                     scrollTop: $("#about").offset().top
+                 },
+        'slow');
+             });
+             $(".la2").click(function () {
+
+                 $('html,body').animate({
+                     scrollTop: $("#product").offset().top
+                 },
+        'slow');
+             });
+             $(".la3").click(function () {
+
+                 $('html,body').animate({
+                     scrollTop: $("#demo").offset().top
+                 },
+        'slow');
+             });
+             $(".la4").click(function () {
+
+                 $('html,body').animate({
+                     scrollTop: $("#clients").offset().top
+                 },
+        'slow');
+             });
+             $(".la5").click(function () {
+
+                 $('html,body').animate({
+                     scrollTop: $("#contact").offset().top
+                 },
+        'slow');
+             });
+
+         });
+</script>
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btn_submit').click(function () {
+                var uname = $('#txt_name').val();
+                if (uname == "") {
+                    alert(" Please Enter User Name ..");
+                    return false;
+                }
+               
+                var emailval = $('#txt_email').val();
+                var idx = emailval.indexOf("@");
+                var lidx = emailval.lastIndexOf(".");
+
+                if (idx < 1 || lidx < idx + 2 || lidx + 2 >= emailval.length) {
+                    alert("Please, enter valid e-mail address ..");
+                    return false;
+                }
+
+
+
+            });
+
+
+
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+<div class="page-wrapper">
+ 	
+    <!-- Preloader 
+    <div class="preloader"></div>-->
+ 
+   
+    
+    <header class="main-header mobile-header " >
+    	
+        <div class="header-lower " >
+        	<div class="auto-container clearfix">
+            	
+                <!--Outer Box-->
+                <div class="outer-box" style="padding:0PX;">
+                
+                    <!-- Logo -->
+                  <div class="logo">
+                        <a href="index.html"><img src="images/logo-interviewprep.png" style="width:245px" alt=""></a>
+                        <p class="mb0"><span style="font-size:17px;FONT-FAMILY:Monotype Corsiva;line-height:14px;">A high intensity low cost interview coaching bootcamp</span></p>
+                     </div>
+                    
+                    <nav class="main-menu">
+                        
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->    	
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="navbar-collapse collapse clearfix" id="menu-center">
+                            <ul class="navigation">
+                                <li><a  class="current la1" href="index.html#about">Why are we here?</a>
+                                    
+                                </li>
+                                <li ><a href="index.html#crack-interview" class="la2">Crack the Job Interview</a>
+                                    
+                                </li>
+                                <li ><a href="index.html#Testimonials" class="la3">Testimonials </a>
+                                    
+                                </li>
+                                <li><a href="index.html#contact" class="la4">Contact </a>
+                                    
+                                </li>
+                                <li><a href="faqs.html">FAQ </a></li>
+                                  
+                                
+                                
+                                <li><a href="blogs.html" class="la5">Blog </a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </header>
+  
+    	<section class="page-title" style="background-image:url(images/main-slider/2.jpg);">
+    	<div class="auto-container">
+        	<div class="sec-title">
+                <h1>Contact Us</h1>
+              
+            </div>
+        </div>
+        <!--Down Arrow-->
+        <div class="down-arrow scroll-to-target" data-target=".scroll-to-this"></div>
+    </section>
+  
+    
+    
+    
+    
+                  
+          <section style="background:#fff;" class="team-section ">
+    	<div class="auto-container">
+              <div class="row">
+     <div class="col-md-6 col-md-offset-3">
+        	<div class="contact">
+         
+             <form id="contactForm2" action="processForm.php" method="post">
+
+        <label> Name <span>*</span></label>
+        <input type="text" ID="txt_name" class="form-control" />
+        
+       
+    
+         <label>Contact number <span>*</span></label>
+         <input type="text" ID="txt_contactno" class="form-control" />
+        
+         <label>Email <span>*</span></label>
+         <input type="text" ID="txt_email" class="form-control" />
+        
+                 <label>Message </label>
+                 <textarea name="txt_msg" class="form-control" placeholder="Message"></textarea>
+      
+       
+<input name="Sub" id="btn_submit" type="submit" class="theme-btn rounded-btn-blue learnmore"  value="Submit" />
+           </form>
+        </div>
+     
+        </div>
+
+
+        
+        
+        </div>
+
+        	</div>
+      
+   </section>      
+                    
+               
+
+ 
+
+   
+
+   
+   
+    <!--Main Footer-->
+    <footer class="main-footer">
+    	
+        <!--Footer Upper-->        
+        <div class="footer-upper">
+            <div class="auto-container">
+                <div class="row clearfix">
+                
+                	<div class="col-lg-12 col-sm-12 col-xs-12 column text-center" style="margin-bottom:10px;">
+                    
+                        <p><b>Please reach out with questions!   <a href="mailto:kumarjaya.p@gmail.com">kumarjaya.p@gmail.com</a></b></p>
+                    </div>
+              
+             
+                </div>
+                
+                <!--Contact Info-->
+                <div class="contact-info">
+                	<ul>
+                    	<li><img src="images/facebook.png" /></li>
+                        <li><img src="images/twitter.png" /></li>
+                        <li><img src="images/linkindin.png" /></li>
+                        <li><img src="images/social-icon.png" /></li>
+                        <li><img src="images/social-icon1.png" /></li>
+                                                                             
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+       
+    </footer>
+    
+</div>
+<div class="scroll-to-top scroll-to-target" data-target=".home"><span class="fa fa-arrow-up"></span></div>
+
+ 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/revolution.min.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
