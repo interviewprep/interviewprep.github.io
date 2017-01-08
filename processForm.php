@@ -15,7 +15,7 @@ if($_POST['Sub'])
   $from = $_POST['senderEmail'];
   
  //$to = "ajay@aopl.net,info@gloinnt.com,jasperaugustine@yahoo.com";
-$to = "kumarjaya.p@gmail.com,nandini@nextwebi.com";
+$to = "info@programminginterviewprep.com";
   
   $subject = "progamming interview preparation quick contact form";
   extract($_POST);
