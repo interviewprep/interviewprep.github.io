@@ -1,0 +1,87 @@
+<h1 style="color: blue;">Time Complexity</h1>
+<h2 style="color: blue;">Why is time complexity important?</h2>
+<p style="font-size: 14px;">Many internet companies deal with large quantities of data. The difference between a O(n^2) algorithm and O(n) algorithm can be significant when dealing with massive data.&nbsp;</p>
+<p style="font-size: 14px;">Of course, in programming interviews, coming up with a solution with a lower time complexity is also seen as demonstration of problem solving skills.&nbsp;</p>
+<h2 style="color: blue;">The intuition behind time complexity:</h2>
+<p>&nbsp;</p>
+<p style="font-size: 14px;">Time complexity is not about how much time a program takes to execute, rather how the execution time scales with input.</p>
+<p><iframe src="//www.youtube.com/embed/45xrI4nZe4Y" width="425" height="350"></iframe></p>
+<h2 style="color: blue;"><strong>Guess the time complexity?</strong></h2>
+<p><span style="font-weight: 400; font-size: 14px;">What of the following time complexities best applies to the following functions?</span></p>
+<p><span style="font-weight: 400; font-size: 14px;">O(n), O(log n), O(n log n), O(n^2), O(n!), O(n log log n)</span></p>
+<p>&nbsp;</p>
+<h2><strong>Easy questions:</strong></h2>
+<p><span style="font-weight: 400;">1.</span></p>
+<p><em><span style="font-weight: 400;">int &nbsp;fun(int n) {</span></em></p>
+<p><em><span style="font-weight: 400;">int count = 0;</span></em></p>
+<p><em><span style="font-weight: 400;">for (int i=0;i&lt;n; i++) {</span></em></p>
+<p><em><span style="font-weight: 400;">&nbsp; for (int j=0;j&lt;n; j++) {</span></em></p>
+<p><em><span style="font-weight: 400;">&nbsp; &nbsp; count = count + 1</span></em></p>
+<p><em><span style="font-weight: 400;">}</span></em></p>
+<p><em><span style="font-weight: 400;">}</span></em></p>
+<p><em><span style="font-weight: 400;">for (int i =0; i&lt;n; i++) {</span></em></p>
+<p><em><span style="font-weight: 400;">&nbsp; count = count + 1;</span></em></p>
+<p><em><span style="font-weight: 400;">}</span></em></p>
+<p><em><span style="font-weight: 400;">return count;</span></em></p>
+<p><em><span style="font-weight: 400;">} </span></em></p>
+<p><em><strong>&nbsp;</strong></em></p>
+<p><span style="font-weight: 400;">2.</span></p>
+<p><em><span style="font-weight: 400;">int fun(int n)</span></em></p>
+<p><em><span style="font-weight: 400;">{</span></em></p>
+<p><em><span style="font-weight: 400;"> int count = 0;</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;for (int i = n; i &gt; 0; i=i/2) {</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1;</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;}</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;return count;</span></em></p>
+<p><em><span style="font-weight: 400;">} </span></em></p>
+<p><em><strong>&nbsp;</strong></em></p>
+<h2><strong>Challenging questions: </strong></h2>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">3.</span></p>
+<p><em><span style="font-weight: 400;">int fun(int n)</span></em></p>
+<p><em><span style="font-weight: 400;">{</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;int count = 0;</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;for (int i = n; i &gt; 0; i /= 2) {</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;for (int j = 0; j &lt; i; j++) {</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count += 1;</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;}</span></em></p>
+<p><em><span style="font-weight: 400;">}</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;return count;</span></em></p>
+<p><em><span style="font-weight: 400;">}</span></em></p>
+<p>&nbsp;</p>
+<p><em><span style="font-weight: 400;"><strong>4.</strong></span></em></p>
+<p><em><span style="font-weight: 400;">void fun(int n, int arr[])</span></em></p>
+<p><em><span style="font-weight: 400;">{</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;int i = 0, j = 0;</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;for(; i &lt; n; ++i) {</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(j &lt; n &amp;&amp; arr[i] &lt; arr[j]) {</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++;</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;}</span></em></p>
+<p><em><span style="font-weight: 400;">}</span></em></p>
+<p><em><span style="font-weight: 400;">&nbsp;</span></em></p>
+<p>&nbsp;</p>
+<p><em><span style="font-weight: 400;">5.</span></em></p>
+<p><em><span style="font-weight: 400;">int fun(int n)</span></em></p>
+<p><em><span style="font-weight: 400;">{</span></em></p>
+<p><em><span style="font-weight: 400;"> int count = 0;</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;for (int i = 0; i &lt; n; i++) {</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;for (int j = i; j &gt; 0; j--) &nbsp;&nbsp;{ </span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1;</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;}</span></em></p>
+<p><em><span style="font-weight: 400;"> &nbsp;return count;</span></em></p>
+<p><em><span style="font-weight: 400;"><strong><br /><span style="font-weight: 400;">} </span></strong></span></em></p>
+<p><strong>&nbsp;</strong></p>
+<h2>&nbsp;</h2>
+<h2 style="color:blue;"><strong>Answers</strong></h2>
+<p>&nbsp;</p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">O(n^2)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">O(log n)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">O(n)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">O(n)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">O(n^2)</span></li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
